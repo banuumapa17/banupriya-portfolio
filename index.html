@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banupriya Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,400;1,9..144,600&family=Manrope:wght@400;600;800&display=swap">
+<style>
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+
+/* Layout: navy hero with a pen-nib emblem, then a cream résumé band, a navy book showcase, a cream poster band and a navy contact close. One look, no theme switch. */
+:root {
+  --navy: #0B1A7A;
+  --navy-deep: #08125A;
+  --navy-lift: #1A2BA8;
+  --gold: #D9B45A;
+  --gold-deep: #8F6A18;
+  --paper: #FBF6EA;
+  --ink: #1B1F3B;
+  --mist: #E6EAFB;
+  --display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --body: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--navy); color: var(--paper); font-family: var(--body); font-size: 17px; line-height: 1.6; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: 1120px; margin-inline: auto; padding-inline: 20px; }
+.eyebrow { font-weight: 800; font-size: 13px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); }
+.on-paper .eyebrow { color: var(--gold-deep); }
+
+/* nav */
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--navy-deep); border-bottom: 1px solid rgba(217,180,90,0.45); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-block: 12px; }
+.brand { font-family: var(--display); font-weight: 700; font-size: 22px; text-decoration: none; color: var(--gold); }
+.nav ul { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
+.nav a.l { text-decoration: none; font-weight: 600; font-size: 15px; color: var(--paper); padding-block: 6px; border-bottom: 2px solid transparent; }
+.nav a.l:hover { border-bottom-color: var(--gold); }
+
+/* hero */
+.hero { position: relative; overflow: hidden; background: var(--navy); border-bottom: 1px solid var(--gold); }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 32px; align-items: center; padding-block: 72px 80px; }
+.hello { font-family: var(--display); font-style: italic; font-size: 28px; color: var(--gold); }
+.name { font-size: clamp(64px, 12vw, 148px); line-height: 0.92; letter-spacing: -0.03em; font-weight: 700; margin-top: 4px; }
+.role { display: flex; align-items: center; gap: 14px; margin-top: 26px; }
+.role::before { content: ""; width: 56px; height: 2px; background: var(--gold); flex: none; }
+.role span { font-weight: 800; font-size: 14px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); }
+.tagline { font-family: var(--display); font-size: clamp(26px, 3.6vw, 40px); line-height: 1.2; margin-top: 36px; max-width: 18em; font-weight: 500; }
+.tagline em { color: var(--gold); font-weight: 600; }
+.cta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 36px; }
+.btn { display: inline-block; text-decoration: none; font-weight: 800; font-size: 15px; letter-spacing: 0.06em; padding: 14px 24px; border-radius: 999px; border: 2px solid var(--gold); }
+.btn.solid { background: var(--gold); color: var(--navy-deep); }
+.btn.solid:hover { background: var(--paper); border-color: var(--paper); }
+.btn.line { color: var(--gold); }
+.btn.line:hover { background: rgba(217,180,90,0.16); }
+.emblem { position: relative; aspect-ratio: 1; max-width: 100%; width: min(100%, 420px); justify-self: center; }
+.emblem .disc { position: absolute; inset: 0; border-radius: 50%; background: var(--navy-lift); opacity: 0.6; }
+.emblem .ring { position: absolute; inset: 14%; border-radius: 50%; border: 1.5px solid var(--gold); }
+.emblem svg { position: absolute; inset: 20% 28%; width: 44%; height: 60%; }
+
+/* shared section */
+section { scroll-margin-top: 70px; }
+.band { padding-block: 88px; }
+.band h2 { font-size: clamp(34px, 5vw, 56px); line-height: 1.05; margin-top: 12px; font-weight: 700; }
+.on-paper { background: var(--paper); color: var(--ink); }
+.on-navy { background: var(--navy); color: var(--paper); }
+.lede { font-size: 19px; max-width: 38em; margin-top: 20px; }
+
+/* resume */
+.resume { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 56px; margin-top: 48px; }
+.side h3 { font-family: var(--body); font-weight: 800; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 14px; }
+.side section + section, .side div + div { margin-top: 34px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.chips li { background: var(--navy); color: var(--paper); font-weight: 600; font-size: 14px; padding: 7px 14px; border-radius: 999px; }
+.chips li.hot { background: var(--gold); color: var(--navy-deep); font-weight: 800; }
+.facts { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font-size: 16px; }
+.facts b { font-family: var(--display); font-size: 22px; color: var(--navy); }
+.job { padding-bottom: 34px; margin-bottom: 34px; border-bottom: 1px solid rgba(11,26,122,0.18); }
+.job:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+.job h3 { font-size: 26px; font-weight: 700; color: var(--navy); }
+.job .org { font-family: var(--display); font-style: italic; color: var(--gold-deep); font-size: 19px; margin-top: 2px; }
+.job ul { margin: 16px 0 0; padding-left: 20px; display: grid; gap: 8px; }
+.job li::marker { color: var(--gold-deep); }
+.job p { margin-top: 14px; }
+.edu { font-size: 16px; }
+.edu b { color: var(--navy); }
+
+/* book */
+.book { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 56px; margin-top: 48px; align-items: center; }
+.cover { margin: 0; justify-self: center; width: min(100%, 360px); }
+.cover img { display: block; width: 100%; height: auto; border: 1px solid var(--gold); box-shadow: 12px 14px 0 rgba(0,0,0,0.28); }
+.book h3 { font-size: clamp(28px, 4vw, 40px); line-height: 1.1; font-weight: 700; }
+.points { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 12px; }
+.points li { display: grid; grid-template-columns: 14px 1fr; gap: 12px; align-items: start; }
+.points li::before { content: ""; width: 9px; height: 9px; background: var(--gold); transform: rotate(45deg); margin-top: 9px; }
+blockquote { margin: 32px 0 0; padding: 22px 26px; border: 1px solid var(--gold); border-radius: 14px; background: var(--navy-deep); font-family: var(--display); font-style: italic; font-size: 21px; line-height: 1.4; color: var(--gold); }
+.pages-label { margin-top: 64px; }
+.strip { display: flex; gap: 18px; overflow-x: auto; padding: 18px 4px 22px; margin-top: 8px; scroll-snap-type: x proximity; }
+.strip button { flex: none; width: 190px; padding: 0; border: 1px solid var(--gold); background: var(--paper); cursor: zoom-in; scroll-snap-align: start; box-shadow: 6px 7px 0 rgba(0,0,0,0.28); }
+.strip img { display: block; width: 100%; height: auto; }
+.hint { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+
+/* poster */
+.poster { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 56px; margin-top: 48px; align-items: center; }
+.poster figure { margin: 0; justify-self: center; width: min(100%, 420px); }
+.poster button { display: block; width: 100%; padding: 0; border: 1px solid var(--navy); cursor: zoom-in; background: var(--navy); box-shadow: 12px 14px 0 rgba(11,26,122,0.2); }
+.poster img { display: block; width: 100%; height: auto; }
+.poster h3 { font-size: clamp(26px, 3.6vw, 36px); line-height: 1.1; color: var(--navy); }
+.services { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 28px; margin-top: 28px; }
+.services h4 { font-family: var(--display); font-size: 21px; margin: 0; color: var(--navy); }
+.services p { font-size: 15.5px; margin-top: 4px; }
+
+/* contact */
+.contact { text-align: left; }
+.contact h2 { max-width: 14em; }
+.mail { display: inline-flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
+.mail code { font-family: var(--body); font-weight: 800; font-size: clamp(18px, 3.4vw, 28px); color: var(--gold); user-select: all; overflow-wrap: anywhere; }
+.copy { font: inherit; font-weight: 800; font-size: 14px; letter-spacing: 0.06em; background: transparent; color: var(--gold); border: 2px solid var(--gold); border-radius: 999px; padding: 10px 20px; cursor: pointer; }
+.copy:hover { background: rgba(217,180,90,0.16); }
+.loc { margin-top: 18px; opacity: 0.9; }
+footer { background: var(--navy-deep); border-top: 1px solid rgba(217,180,90,0.45); padding-block: 22px; font-size: 14px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+/* lightbox */
+.lb { position: fixed; inset: 0; z-index: 50; background: rgba(5,9,48,0.92); display: flex; align-items: center; justify-content: center; padding: 20px; padding-top: calc(20px + env(safe-area-inset-top, 0px)); }
+.lb[hidden] { display: none; }
+.lb img { max-width: min(100%, 720px); max-height: 100%; width: auto; height: auto; border: 1px solid var(--gold); background: var(--paper); }
+.lb .x { position: absolute; top: calc(14px + env(safe-area-inset-top, 0px)); right: 16px; font: inherit; font-weight: 800; background: var(--gold); color: var(--navy-deep); border: 0; border-radius: 999px; padding: 10px 18px; cursor: pointer; }
+
+@media (max-width: 860px) {
+  .hero .wrap { grid-template-columns: minmax(0, 1fr); padding-block: 48px 56px; }
+  .emblem { width: min(70%, 280px); justify-self: start; }
+  .resume, .book, .poster { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .band { padding-block: 64px; }
+}
+@media (max-width: 520px) {
+  body { font-size: 16px; }
+  .services { grid-template-columns: minmax(0, 1fr); }
+  .strip button { width: 150px; }
+  .nav ul { gap: 14px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Banupriya</a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a class="l" href="#resume">Résumé</a></li>
+        <li><a class="l" href="#book">Book</a></li>
+        <li><a class="l" href="#poster">Poster</a></li>
+        <li><a class="l" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-label="Introduction">
+    <div class="wrap">
+      <div>
+        <p class="hello">Hello, I’m</p>
+        <h1 class="name">Banupriya</h1>
+        <p class="role"><span>Senior Content Writer · Digital Marketing</span></p>
+        <p class="tagline">Clear words. Found by search. <em>Remembered by readers.</em></p>
+        <div class="cta">
+          <a class="btn solid" href="#book">See my work</a>
+          <a class="btn line" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="emblem" aria-hidden="true">
+        <div class="disc"></div>
+        <div class="ring"></div>
+        <svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+          <path d="M100 10 C142 80 172 150 150 222 L100 292 L50 222 C28 150 58 80 100 10 Z" fill="#0B1A7A" stroke="#D9B45A" stroke-width="3" stroke-linejoin="round"></path>
+          <path d="M100 38 C124 90 140 150 130 210" fill="none" stroke="#D9B45A" stroke-width="1.2" opacity="0.6"></path>
+          <path d="M100 38 C76 90 60 150 70 210" fill="none" stroke="#D9B45A" stroke-width="1.2" opacity="0.6"></path>
+          <line x1="100" y1="160" x2="100" y2="286" stroke="#D9B45A" stroke-width="3"></line>
+          <circle cx="100" cy="150" r="11" fill="#D9B45A"></circle>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="resume" class="band on-paper" aria-labelledby="resume-h">
+    <div class="wrap">
+      <p class="eyebrow">Résumé</p>
+      <h2 id="resume-h">Nine years of work, four of them spent writing.</h2>
+      <p class="lede">I write, edit and proofread content that people can find and trust. My path through customer support, sales and software testing taught me to listen closely, check everything twice and keep the reader in mind.</p>
+
+      <div class="resume">
+        <aside class="side">
+          <div>
+            <h3>At a glance</h3>
+            <ul class="facts">
+              <li><b>4+ years</b><br>in content writing</li>
+              <li><b>About 9 years</b><br>of total experience</li>
+              <li><b>US, UK and more</b><br>markets written for</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Skills</h3>
+            <ul class="chips">
+              <li class="hot">SEO content</li>
+              <li class="hot">Digital marketing</li>
+              <li>Editing and proofreading</li>
+              <li>Content ideation</li>
+              <li>CMS and HTML basics</li>
+              <li>Image selection and editing</li>
+              <li>Licensing and accuracy checks</li>
+              <li>Training and onboarding</li>
+            </ul>
+          </div>
+          <div class="edu">
+            <h3>Education</h3>
+            <p><b>B.Sc. Computer Science</b><br>Meenakshi College for Women, 2014</p>
+          </div>
+        </aside>
+
+        <div>
+          <article class="job">
+            <h3>Senior Content Writer</h3>
+            <p class="org">Groupon</p>
+            <ul>
+              <li>Writes, edits and proofreads deal content for several regions, including the US and UK.</li>
+              <li>Uses specific, descriptive titles so customers find exactly the service they want through search.</li>
+              <li>Checks supplier licensing documents and proofreads pricing before deals go live.</li>
+              <li>Chooses and enhances images so the headline and picture tell one clear story.</li>
+              <li>Works in a CMS with HTML tags and uses a deal-builder tool to turn merchant details into content.</li>
+              <li>Trains new team members and supports onboarding for new joiners.</li>
+            </ul>
+          </article>
+          <article class="job">
+            <h3>Customer Support Executive</h3>
+            <p class="org">Teleperformance · Service Tree</p>
+            <p>Answered customer questions with patience and clear language. That experience still shapes the tone of my writing.</p>
+          </article>
+          <article class="job">
+            <h3>Manual Tester</h3>
+            <p class="org">Cognizant Technology Solutions · about 1 year</p>
+            <p>Tested software by hand and reported issues. It built my eye for detail and my habit of checking everything twice.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="book" class="band on-navy" aria-labelledby="book-h">
+    <div class="wrap">
+      <p class="eyebrow">Selected work · Book</p>
+      <h2 id="book-h">How to Stop Overthinking</h2>
+
+      <div class="book">
+        <figure class="cover">
+          <img src="img/bk-01.jpg" alt="Cover of the book How to Stop Overthinking: gold roses on deep blue" width="600" height="900">
+        </figure>
+        <div>
+          <h3>An illustrated mini-book on calming a busy mind.</h3>
+          <p class="lede">A short, friendly guide that explains why we overthink and offers simple steps to stop the loop. I wrote it, designed it and drew every illustration.</p>
+          <ul class="points">
+            <li>11 pages in nine short chapters</li>
+            <li>Original illustrations: a thought spiral, flow diagrams, icons and cards</li>
+            <li>A calm blue and gold design that carries through every page</li>
+          </ul>
+          <blockquote>You don’t need to control every thought. You only need to choose which thoughts deserve your attention.</blockquote>
+        </div>
+      </div>
+
+      <p class="eyebrow pages-label">Inside the book</p>
+      <p class="hint">Tap a page to enlarge it.</p>
+      <div class="strip" role="list">
+        <button type="button" role="listitem" data-src="img/bk-02.jpg" data-alt="Contents page"><img src="img/bk-02.jpg" alt="Contents page" loading="lazy"></button>
+        <button type="button" role="listitem" data-src="img/bk-03.jpg" data-alt="Chapter 1, Stuck in a Loop"><img src="img/bk-03.jpg" alt="Chapter 1, Stuck in a Loop, with a spiral illustration" loading="lazy"></button>
+        <button type="button" role="listitem" data-src="img/bk-04.jpg" data-alt="Chapter 2, Thinking vs. Overthinking"><img src="img/bk-04.jpg" alt="Chapter 2, Thinking vs. Overthinking, with a loop diagram" loading="lazy"></button>
+        <button type="button" role="listitem" data-src="img/bk-05.jpg" data-alt="Chapter 3, Why Do We Overthink"><img src="img/bk-05.jpg" alt="Chapter 3, Why Do We Overthink, with a shield illustration" loading="lazy"></button>
+        <button type="button" role="listitem" data-src="img/bk-06.jpg" data-alt="Chapter 4, Notice Your Thoughts"><img src="img/bk-06.jpg" alt="Chapter 4, Notice Your Thoughts, with a thought cloud" loading="lazy"></button>
+        <button type="button" role="listitem" data-src="img/bk-07.jpg" data-alt="Chapter 5, Fact or Assumption"><img src="img/bk-07.jpg" alt="Chapter 5, Fact or Assumption, with two comparison cards" loading="lazy"></button>
+        <button type="button" role="listitem" data-src="img/bk-08.jpg" data-alt="Chapter 6, Turning What If Around"><img src="img/bk-08.jpg" alt="Chapter 6, Turning What If Around, with stepping stones" loading="lazy"></button>
+        <button type="button" role="listitem" data-src="img/bk-09.jpg" data-alt="Chapter 7, Simple Ways to Calm Your Mind"><img src="img/bk-09.jpg" alt="Chapter 7, five calming techniques with icons" loading="lazy"></button>
+        <button type="button" role="listitem" data-src="img/bk-10.jpg" data-alt="Chapter 8, Build a Calmer Mind"><img src="img/bk-10.jpg" alt="Chapter 8, Build a Calmer Mind, with a worry flowchart" loading="lazy"></button>
+        <button type="button" role="listitem" data-src="img/bk-11.jpg" data-alt="Closing page"><img src="img/bk-11.jpg" alt="Closing page with a crescent moon and stars" loading="lazy"></button>
+      </div>
+    </div>
+  </section>
+
+  <section id="poster" class="band on-paper" aria-labelledby="poster-h">
+    <div class="wrap">
+      <p class="eyebrow">Selected work · Poster</p>
+      <h2 id="poster-h">A poster that says what I do.</h2>
+
+      <div class="poster">
+        <figure>
+          <button type="button" data-src="img/poster.jpg" data-alt="Portfolio poster"><img src="img/poster.jpg" alt="Portfolio poster: Banupriya, Senior Content Writer and Digital Marketing, with a gold pen nib" width="1154" height="1614" loading="lazy"></button>
+        </figure>
+        <div>
+          <h3>One page, four strengths.</h3>
+          <p class="lede">I designed this poster for my portfolio. It puts my name, my role and my promise to readers in one view, followed by the four things I do best.</p>
+          <div class="services">
+            <div><h4>SEO Content</h4><p>Pages written to rank and built to be read.</p></div>
+            <div><h4>Editing and Polish</h4><p>Sharper sentences, careful checks, clean copy.</p></div>
+            <div><h4>Storytelling</h4><p>Simple, human writing that connects with people.</p></div>
+            <div><h4>Digital Marketing</h4><p>Content shaped for campaigns, channels and audiences.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="band on-navy contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h2 id="contact-h">Let’s write something people remember.</h2>
+      <div class="mail">
+        <code id="email">banupriyaumapathy@gmail.com</code>
+        <button type="button" class="copy" id="copy" aria-live="polite">Copy email</button>
+      </div>
+      <p class="loc">Chennai, India</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Banupriya · Senior Content Writer</span>
+    <span>Clear words. Found by search. Remembered by readers.</span>
+  </div>
+</footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Enlarged image">
+  <button type="button" class="x" id="lbx">Close</button>
+  <img id="lbimg" src="" alt="">
+</div>
+
+<script>
+(function () {
+  var lb = document.getElementById('lb');
+  var img = document.getElementById('lbimg');
+  var closeBtn = document.getElementById('lbx');
+  var last = null;
+  function open(btn) {
+    last = btn;
+    img.src = btn.getAttribute('data-src');
+    img.alt = btn.getAttribute('data-alt') || '';
+    lb.hidden = false;
+    closeBtn.focus();
+  }
+  function close() {
+    lb.hidden = true;
+    img.src = '';
+    if (last) last.focus();
+  }
+  document.querySelectorAll('[data-src]').forEach(function (b) {
+    b.addEventListener('click', function () { open(b); });
+  });
+  closeBtn.addEventListener('click', close);
+  lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !lb.hidden) close(); });
+
+  var copy = document.getElementById('copy');
+  var email = document.getElementById('email');
+  copy.addEventListener('click', function () {
+    var text = email.textContent;
+    function done(msg) {
+      copy.textContent = msg;
+      setTimeout(function () { copy.textContent = 'Copy email'; }, 2200);
+    }
+    function fallback() {
+      var r = document.createRange();
+      r.selectNodeContents(email);
+      var s = window.getSelection();
+      s.removeAllRanges();
+      s.addRange(r);
+      done('Email selected');
+    }
+    try {
+      navigator.clipboard.writeText(text).then(function () { done('Copied'); }, fallback);
+    } catch (err) { fallback(); }
+  });
+})();
+</script>
+
+</body>
+</html>
